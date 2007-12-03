@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
-  def manage
+  def register
+    
   end
 end
