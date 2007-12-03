@@ -15,7 +15,7 @@
     <link rel="home" title="Start" href="/" />
     <%= javascript_include_tag :defaults %>
     <%= stylesheet_link_tag 'scaffold' %>
-    <%= ajax_scaffold_includes %>
+    <%= active_scaffold_includes %>
   </head>
   <body>
     <div class="corpo">
@@ -26,6 +26,7 @@
           <li><%= link_to 'Create Your Account', { :controller => 'users', :action => 'register' } %></li>
         </ul>
       </div>
+      <%= yield %>
     </div>
   </body>
 </html>
