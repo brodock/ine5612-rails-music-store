@@ -1204,3 +1204,154 @@ ActiveRecord::StatementInvalid (Mysql::Error: Column 'artists_id' cannot be null
 
 
 Rendering /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing AdminArtistsController#index (for 127.0.0.1 at 2007-12-03 08:13:00) [GET]
+  Session ID: c54a2a2e320ec39ccd737964de94133e
+  Parameters: {"action"=>"index", "controller"=>"admin_artists"}
+DEPRECATION WARNING: paginate is deprecated and will be removed from Rails 2.0 (Pagination is moving to a plugin in Rails 2.0: script/plugin install svn://errtheblog.com/svn/plugins/classic_pagination)  See http://www.rubyonrails.org/deprecation for details. (called from list at /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:108)
+  [4;36;1mArtist Columns (0.016581)[0m   [0;1mSHOW FIELDS FROM artists[0m
+  [4;35;1mSQL (0.000224)[0m   [0mSELECT count(*) AS count_all FROM artists [0m
+  [4;36;1mArtist Load (0.000355)[0m   [0;1mSELECT * FROM artists LIMIT 0, 10[0m
+
+
+NameError (uninitialized constant AdminArtistsController::Artists):
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:477:in `const_missing'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:162:in `render_scaffold'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:109:in `list'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:96:in `index'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:1101:in `send'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:1101:in `perform_action_without_filters'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/filters.rb:696:in `call_filters'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/filters.rb:688:in `perform_action_without_benchmark'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/rescue.rb:83:in `perform_action'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:435:in `send'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:435:in `process_without_filters'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/filters.rb:684:in `process_without_session_management_support'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/session_management.rb:114:in `process'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:334:in `process'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/dispatcher.rb:41:in `dispatch'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/webrick_server.rb:113:in `handle_dispatch'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/webrick_server.rb:79:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/webrick_server.rb:63:in `dispatch'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/commands/servers/webrick.rb:59
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:495:in `require'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:495:in `require'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+
+Rendering /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing AdminArtistsController#index (for 127.0.0.1 at 2007-12-03 08:13:09) [GET]
+  Session ID: c54a2a2e320ec39ccd737964de94133e
+  Parameters: {"action"=>"index", "controller"=>"admin_artists"}
+DEPRECATION WARNING: paginate is deprecated and will be removed from Rails 2.0 (Pagination is moving to a plugin in Rails 2.0: script/plugin install svn://errtheblog.com/svn/plugins/classic_pagination)  See http://www.rubyonrails.org/deprecation for details. (called from list at /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:108)
+  [4;35;1mArtist Columns (0.001040)[0m   [0mSHOW FIELDS FROM artists[0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT count(*) AS count_all FROM artists [0m
+  [4;35;1mArtist Load (0.000056)[0m   [0mSELECT * FROM artists LIMIT 0, 10[0m
+
+
+NameError (uninitialized constant AdminArtistsController::Artists):
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:477:in `const_missing'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:162:in `render_scaffold'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:109:in `list'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:96:in `index'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:1101:in `send'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:1101:in `perform_action_without_filters'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/filters.rb:696:in `call_filters'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/filters.rb:688:in `perform_action_without_benchmark'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/rescue.rb:83:in `perform_action'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:435:in `send'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:435:in `process_without_filters'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/filters.rb:684:in `process_without_session_management_support'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/session_management.rb:114:in `process'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/base.rb:334:in `process'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/dispatcher.rb:41:in `dispatch'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/webrick_server.rb:113:in `handle_dispatch'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/webrick_server.rb:79:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/webrick_server.rb:63:in `dispatch'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/commands/servers/webrick.rb:59
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:495:in `require'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/activesupport/lib/active_support/dependencies.rb:495:in `require'
+    /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+
+Rendering /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing AdminArtistsController#index (for 127.0.0.1 at 2007-12-03 08:13:18) [GET]
+  Session ID: c54a2a2e320ec39ccd737964de94133e
+  Parameters: {"action"=>"index", "controller"=>"admin_artists"}
+DEPRECATION WARNING: paginate is deprecated and will be removed from Rails 2.0 (Pagination is moving to a plugin in Rails 2.0: script/plugin install svn://errtheblog.com/svn/plugins/classic_pagination)  See http://www.rubyonrails.org/deprecation for details. (called from list at /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:108)
+  [4;36;1mArtist Columns (0.000734)[0m   [0;1mSHOW FIELDS FROM artists[0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT count(*) AS count_all FROM artists [0m
+  [4;36;1mArtist Load (0.000058)[0m   [0;1mSELECT * FROM artists LIMIT 0, 10[0m
+Rendering /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/layout.rhtml
+Completed in 0.01154 (86 reqs/sec) | Rendering: 0.00049 (4%) | DB: 0.02020 (174%) | 200 OK [http://localhost/admin_artists]
+
+
+Processing AdminArtistsController#new (for 127.0.0.1 at 2007-12-03 08:13:20) [GET]
+  Session ID: c54a2a2e320ec39ccd737964de94133e
+  Parameters: {"action"=>"new", "controller"=>"admin_artists"}
+  [4;35;1mArtist Columns (0.000725)[0m   [0mSHOW FIELDS FROM artists[0m
+Rendering /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/layout.rhtml
+Completed in 0.01465 (68 reqs/sec) | Rendering: 0.00051 (3%) | DB: 0.00073 (4%) | 200 OK [http://localhost/admin_artists/new]
+
+
+Processing AdminArtistsController#create (for 127.0.0.1 at 2007-12-03 08:13:28) [POST]
+  Session ID: c54a2a2e320ec39ccd737964de94133e
+  Parameters: {"artist"=>{"name"=>"Bozo", "description"=>"Hell Yeah"}, "commit"=>"Create", "action"=>"create", "controller"=>"admin_artists"}
+  [4;36;1mArtist Columns (0.000908)[0m   [0;1mSHOW FIELDS FROM artists[0m
+  [4;35;1mSQL (0.000190)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000259)[0m   [0;1mINSERT INTO artists (`name`, `description`) VALUES('Bozo', 'Hell Yeah')[0m
+  [4;35;1mSQL (0.015594)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin_artists/list
+Completed in 0.02905 (34 reqs/sec) | DB: 0.01695 (58%) | 302 Found [http://localhost/admin_artists/create]
+
+
+Processing AdminArtistsController#list (for 127.0.0.1 at 2007-12-03 08:13:28) [GET]
+  Session ID: c54a2a2e320ec39ccd737964de94133e
+  Parameters: {"action"=>"list", "controller"=>"admin_artists"}
+DEPRECATION WARNING: paginate is deprecated and will be removed from Rails 2.0 (Pagination is moving to a plugin in Rails 2.0: script/plugin install svn://errtheblog.com/svn/plugins/classic_pagination)  See http://www.rubyonrails.org/deprecation for details. (called from list at /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/scaffolding.rb:108)
+  [4;36;1mArtist Columns (0.003057)[0m   [0;1mSHOW FIELDS FROM artists[0m
+  [4;35;1mSQL (0.000211)[0m   [0mSELECT count(*) AS count_all FROM artists [0m
+  [4;36;1mArtist Load (0.000151)[0m   [0;1mSELECT * FROM artists LIMIT 0, 10[0m
+Rendering /home/brodock/Projetos/Rails/RailsMusicStore/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/layout.rhtml
+Completed in 0.01505 (66 reqs/sec) | Rendering: 0.00047 (3%) | DB: 0.00342 (22%) | 200 OK [http://localhost/admin_artists/list]
