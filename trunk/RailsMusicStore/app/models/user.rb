@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :bought_musics,
-    :foreign_key =>   'user_id'
+    :foreign_key =>   'users_id'
   
   has_many :musics,
     :through => :bought_musics
