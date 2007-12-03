@@ -21,4 +21,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
   map.connect ':controller/:action/:id'
   
+  # Página principal é controlado pelo main
+  map.connect '/:action/:id', :controller => 'main'
+  map.connect '/:action/:id.:format', :controller => 'main'
+  
 end
