@@ -1,3 +1,3 @@
 class AdminMusicsController < ApplicationController
-  scaffold :music
+  active_scaffold :music
 end

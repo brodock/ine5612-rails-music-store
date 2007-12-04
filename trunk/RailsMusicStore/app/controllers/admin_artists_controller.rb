@@ -1,3 +1,3 @@
 class AdminArtistsController < ApplicationController
-  scaffold :artist
+  active_scaffold :artist
 end
