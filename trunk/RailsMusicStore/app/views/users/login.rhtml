@@ -1,0 +1,14 @@
+<h1>Login</h1>
+
+<% form_tag :action => 'login' do %>
+  <!--[form:login]-->
+  <p><label>Name</label><br/>
+  <%= text_field_tag 'login'  %></p>
+
+  <p><label>Password</label><br/>
+  <%= password_field_tag 'password'  %></p>
+  <!--[eoform:login]-->
+  <%= submit_tag "Login" %>
+<% end %>
+
+<%= link_to 'Voltar', "/" %>
