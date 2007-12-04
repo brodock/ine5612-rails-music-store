@@ -24,10 +24,31 @@ class UsersController < ApplicationController
       render :action => 'register'
     end
   end
-
-  #  def edit
-  #    @user = User.find(params[:id])
-  #  end
+  
+  
+  # Login systems
+  def login
+    if request.post?
+      @current_user = User.authenticate(params[:login], params[:password])
+      unless @current_user.nil?
+        session[:user_id] = @current_user.id
+        redirect_to :controller => 'main'
+      end
+    end
+  end
+  
+  def logout
+    session[:user_id] = @current_user = nil
+  end
+  
+  
+  def edit
+    unless @current_user.blank?
+      @user = @current_user
+    else
+      redirect_to :action => 'login'
+    end
+  end
 
   #  def update
   #    @user = User.find(params[:id])
