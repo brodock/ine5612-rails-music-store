@@ -1,6 +1,21 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
+<h1>Músicas a Venda</h1>
 
-<%= "index" %>
+<table>
+  <tr>
+  <% for column in Music.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for music in @musics %>
+  <tr>
+  <% for column in Music.content_columns %>
+    <td><%=h music.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Buy', { :controller => 'users', :action => 'buy', :id => music }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @music_pages.current.previous } if @music_pages.current.previous %>
+<%= link_to 'Next page', { :page => @music_pages.current.next } if @music_pages.current.next %> 

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
      
   # GETs should be safe (see http://www.w3.org/2001/tag/doc/whenToUseGet.html)
   verify :method => :post, :only => [ :destroy, :create, :update ],
-    :redirect_to => { :action => :list }
+    :redirect_to => { :action => :index }
 
   def register
     @user = User.new
@@ -22,6 +22,19 @@ class UsersController < ApplicationController
       redirect_to :controller => 'main', :action => 'index'
     else
       render :action => 'register'
+    end
+  end
+  
+  def buy
+    User.transaction do
+      MusicsUser.transaction do
+        @current_user.credits = @current_user.credits-1
+      
+        @bought_music = MusicsUser.new(:user_id => @current_user.id, :music_id => :id, :date => Date.today)
+        @bought_music.save
+      
+        @current_user.save
+      end
     end
   end
   
