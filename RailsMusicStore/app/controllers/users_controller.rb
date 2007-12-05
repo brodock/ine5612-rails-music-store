@@ -26,17 +26,23 @@ class UsersController < ApplicationController
   end
   
   def buy
-    User.transaction do
-      MusicsUser.transaction do
-        @current_user.credits = @current_user.credits-1
+    unless @current_user.blank? 
+      User.transaction do
+        MusicsUser.transaction do
+          @current_user.credits = @current_user.credits-1
       
-        @bought_music = MusicsUser.new(:user_id => @current_user.id, :music_id => :id, :date => Date.today)
-        @bought_music.save
+          @bought_music = MusicsUser.new(:user_id => @current_user.id, :music_id => params[:id], :date => Date.today)
+          @bought_music.save
       
-        @current_user.save
+          @current_user.save
+        end
       end
+    else
+      redirect_to :action => 'login'
     end
+    
   end
+
   
   
   # Login systems
