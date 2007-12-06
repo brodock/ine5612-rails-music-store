@@ -6,4 +6,11 @@ class MainController < ApplicationController
       @my_musics = @current_user.musics 
     end
   end
+  
+  def my_musics
+    
+    unless @current_user.blank?
+      @my_musics = @current_user.musics 
+    end
+  end
 end

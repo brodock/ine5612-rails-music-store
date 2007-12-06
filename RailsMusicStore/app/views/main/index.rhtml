@@ -1,44 +1,24 @@
-<h1>Músicas a Venda</h1>
-
-<table>
-  <tr>
-    <th>Artista</th>
-    <th>Música</th>
-    <th>Compositor</th>
-  </tr>
+<div id="musics">
+  <h1>Músicas a Venda</h1>
   
-<% for music in @musics %>
-    <tr>
-      <td><%= music.artist.name %></td>
-      <td><%= music.name %></td>
-      <td><%= music.composer_name %></td>
-    
-      <td><%= link_to 'Comprar', { :controller => 'users', :action => 'buy', :id => music }, :confirm => "Quer confirmar a compra da música: #{Music.find(music).name} ?", :method => :post %></td>
-    </tr>
-  <% end %>
-</table>
-
-
-
-
-<% unless @current_user.blank? %>
-  <h1>Suas Músicas Compradas</h1>
-
   <table>
     <tr>
       <th>Artista</th>
       <th>Música</th>
       <th>Compositor</th>
     </tr>
-  
-    <% for music in @my_musics %>
+    
+  <% for music in @musics %>
       <tr>
         <td><%= music.artist.name %></td>
         <td><%= music.name %></td>
         <td><%= music.composer_name %></td>
-    
-        <td><%= link_to 'Download', { :controller => 'musics', :action => 'download', :id => music }, :method => :post %></td>
+      
+        <td><%= link_to_remote 'Comprar AJAX', :url => {:controller => 'users', :action => 'buy', :id => music }, :confirm => "Quer confirmar a compra da música: #{Music.find(music).name} ?", :update => "my_musics" %></td>
       </tr>
     <% end %>
   </table>
-<% end %>
+</div>
+
+
+<%= render :partial => 'my_musics' %>
