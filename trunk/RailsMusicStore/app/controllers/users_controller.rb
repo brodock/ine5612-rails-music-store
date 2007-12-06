@@ -47,7 +47,7 @@ class UsersController < ApplicationController
           end
           
           # Terminou? Retorna a página inicial
-          redirect_to :controller => 'main'        
+          redirect_to :controller => 'main', :action => 'my_musics'
         end
       end
     else

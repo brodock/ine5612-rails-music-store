@@ -1,0 +1,23 @@
+<% unless @current_user.blank? %>
+  <div id="my_musics">
+    <h1>Suas Músicas Compradas</h1>
+  
+    <table>
+      <tr>
+        <th>Artista</th>
+        <th>Música</th>
+        <th>Compositor</th>
+      </tr>
+    
+        <% for music in @my_musics %>
+        <tr>
+          <td><%= music.artist.name %></td>
+          <td><%= music.name %></td>
+          <td><%= music.composer_name %></td>
+      
+          <td><%= link_to 'Download', { :controller => 'musics', :action => 'download', :id => music }, :method => :post %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
