@@ -1,6 +1,11 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
+<h2>Compre Créditos</h2>
 
-<%= "buy" %>
+<% form_tag :controller => 'credits', :action => 'buy' do %>
+  
+  <!--[form:buy]-->
+  <p><label>Creditos</label><br/>
+  <%= text_field_tag 'credits'  %></p>
+  <!--[eoform:buy]-->
+
+  <%= submit_tag "Comprar" %>
+<% end %>

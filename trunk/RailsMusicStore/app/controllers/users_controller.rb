@@ -31,23 +31,28 @@ class UsersController < ApplicationController
       # transaction safe também
       User.transaction @current_user do 
         MusicsUser.transaction do
-          @current_user.credits = @current_user.credits-1
-          @current_user.total_spent = @current_user.total_spent+1
+          if @current_user.credits > 0
+            @current_user.credits = @current_user.credits-1
+            @current_user.total_spent = @current_user.total_spent+1
       
-          @bought_music = MusicsUser.new(:user_id => @current_user.id, :music_id => params[:id], :date => Date.today)
+            @bought_music = MusicsUser.new(:user_id => @current_user.id, :music_id => params[:id], :date => Date.today)
           
-          # Inicia os metodos de persistencia
-          begin
-            if @bought_music.save and @current_user.save
-              flash[:notice] = "Compra realizada com sucesso..."
+            # Inicia os metodos de persistencia
+            begin
+              if @bought_music.save and @current_user.save
+                flash[:music] = "Compra realizada com sucesso..."
+              end
+            rescue
+              # substituir por algo semanticalmente melhor como :error (verificar como ele exibira tal comportamento)
+              flash[:music] = "Você já possui esta música, não é necessário comprá-la novamente :)"
             end
-          rescue
-            # substituir por algo semanticalmente melhor como :error (verificar como ele exibira tal comportamento)
-            flash[:notice] = "Você já possui esta música, não é necessário comprá-la novamente :)"
-          end
           
-          # Terminou? Retorna a página inicial
-          redirect_to :controller => 'main', :action => 'my_musics'
+            # Terminou? Retorna a página inicial
+            redirect_to :controller => 'main', :action => 'my_musics'
+          else
+            flash[:music] = "Você não tem créditos suficientes para realizar a compra!"
+            redirect_to :controller => 'main', :action => 'my_musics'
+          end
         end
       end
     else
