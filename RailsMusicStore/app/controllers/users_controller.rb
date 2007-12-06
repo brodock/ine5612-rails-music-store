@@ -27,14 +27,27 @@ class UsersController < ApplicationController
   
   def buy
     unless @current_user.blank? 
-      User.transaction do
+      # passando objeto como parametro pra transaction, mantem eles
+      # transaction safe também
+      User.transaction @current_user do 
         MusicsUser.transaction do
           @current_user.credits = @current_user.credits-1
+          @current_user.total_spent = @current_user.total_spent+1
       
           @bought_music = MusicsUser.new(:user_id => @current_user.id, :music_id => params[:id], :date => Date.today)
-          @bought_music.save
-      
-          @current_user.save
+          
+          # Inicia os metodos de persistencia
+          begin
+            if @bought_music.save and @current_user.save
+              flash[:notice] = "Compra realizada com sucesso..."
+            end
+          rescue
+            # substituir por algo semanticalmente melhor como :error (verificar como ele exibira tal comportamento)
+            flash[:notice] = "Você já possui esta música, não é necessário comprá-la novamente :)"
+          end
+          
+          # Terminou? Retorna a página inicial
+          redirect_to :controller => 'main'        
         end
       end
     else

@@ -2,42 +2,43 @@
 
 <table>
   <tr>
-  <% for column in Music.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %>
+    <th>Artista</th>
+    <th>Música</th>
+    <th>Compositor</th>
   </tr>
   
 <% for music in @musics %>
-  <tr>
-  <% for column in Music.content_columns %>
-    <td><%=h music.send(column.name) %></td>
+    <tr>
+      <td><%= music.artist.name %></td>
+      <td><%= music.name %></td>
+      <td><%= music.composer_name %></td>
+    
+      <td><%= link_to 'Comprar', { :controller => 'users', :action => 'buy', :id => music }, :confirm => "Quer confirmar a compra da música: #{Music.find(music).name} ?", :method => :post %></td>
+    </tr>
   <% end %>
-    <td><%= link_to 'Buy', { :controller => 'users', :action => 'buy', :id => music }, :confirm => 'Are you sure?', :method => :post %></td>
-  </tr>
-<% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @music_pages.current.previous } if @music_pages.current.previous %>
-<%= link_to 'Next page', { :page => @music_pages.current.next } if @music_pages.current.next %> 
+
+
 
 <% unless @current_user.blank? %>
-<h1>Suas Músicas Compradas</h1>
+  <h1>Suas Músicas Compradas</h1>
 
-<table>
-  <tr>
-  <% for column in Music.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %>
-  </tr>
+  <table>
+    <tr>
+      <th>Artista</th>
+      <th>Música</th>
+      <th>Compositor</th>
+    </tr>
   
-<% for music in @my_musics %>
-  <tr>
-  <% for column in Music.content_columns %>
-    <td><%=h music.send(column.name) %></td>
-  <% end %>
-    <td><%= link_to 'Download', { :controller => 'musics', :action => 'download', :id => music }, :method => :post %></td>
-  </tr>
-<% end %>
-</table>
-<p></p>
+    <% for music in @my_musics %>
+      <tr>
+        <td><%= music.artist.name %></td>
+        <td><%= music.name %></td>
+        <td><%= music.composer_name %></td>
+    
+        <td><%= link_to 'Download', { :controller => 'musics', :action => 'download', :id => music }, :method => :post %></td>
+      </tr>
+    <% end %>
+  </table>
 <% end %>

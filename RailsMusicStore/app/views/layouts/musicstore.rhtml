@@ -27,7 +27,7 @@
             <li>Olá <%= @current_user.name %></li>
             <li><%= link_to 'Logout', { :controller => 'users', :action => 'logout' } %></li>
           <% else %>
-            <li><%= link_to 'Create Your Account', { :controller => 'users', :action => 'register' } %></li>
+            <li><%= link_to 'Crie sua Conta!', { :controller => 'users', :action => 'register' } %></li>
             <li><%= link_to 'Login', { :controller => 'users', :action => 'login' } %></li>
           <% end %>
         </ul>
