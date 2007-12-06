@@ -1,3 +1,4 @@
+<div class="avisos"><p style="color: green"><%= flash[:music] %></p></div>
 <% unless @current_user.blank? %>
 
   <h2>Suas Músicas Compradas</h2>
@@ -9,7 +10,7 @@
       <th>Compositor</th>
     </tr>
   
-        <% for music in @my_musics %>
+          <% for music in @my_musics %>
       <tr>
         <td><%= music.artist.name %></td>
         <td><%= music.name %></td>
@@ -20,4 +21,8 @@
     <% end %>
   </table>
 
+<% end %>
+
+<% unless @current_user.blank? %>
+  <div id="credits"><p>Você tem: <strong> <%= @current_user.credits %> </strong> créditos!</p></div>
 <% end %>

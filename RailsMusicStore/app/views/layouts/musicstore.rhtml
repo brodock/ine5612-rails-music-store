@@ -25,7 +25,7 @@
         <ul id="globalnav">
           <% unless @current_user.blank? %>
             <li><a href="#">Olá <%= @current_user.name %></a></li>
-            <li><%= link_to_remote 'Compre Creditos', :url => { :controller => 'users', :action => 'credits' } %></li>
+            <li><%= link_to_remote 'Compre Creditos', :url => { :controller => 'credits', :action => 'buy' }, :method => :get, :update => 'buy_credits' %></li>
             <li><%= link_to 'Logout', { :controller => 'users', :action => 'logout' } %></li>
           <% else %>
             <li><%= link_to 'Crie sua Conta!', { :controller => 'users', :action => 'register' } %></li>
@@ -33,8 +33,12 @@
           <% end %>
         </ul>
       </div>
-      <div id="creditos"></div>
+      <% unless @current_user.blank? %>
+        <div id="buy_credits"></div>
+      <% end %>
+      
       <%= yield %>
+      
     </div>
   </body>
 </html>
