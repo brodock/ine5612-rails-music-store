@@ -14,17 +14,18 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/musicstore.css" media="screen" />
     <link rel="home" title="Start" href="/" />
     <%= javascript_include_tag :defaults %>
-    <%= stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'musicstore' %>
     <%= active_scaffold_includes %>
   </head>
   <body>
     <div class="corpo">
       <div class="avisos"><p style="color: green"><%= flash[:notice] %></p></div>
-      
+      <h1>Digital Music Store!</h1>
       <div class="navegacao">
-        <ul>
+        <ul id="globalnav">
           <% unless @current_user.blank? %>
-            <li>Olá <%= @current_user.name %></li>
+            <li><a href="#">Olá <%= @current_user.name %></a></li>
+            <li><%= link_to_remote 'Compre Creditos', :url => { :controller => 'users', :action => 'credits' } %></li>
             <li><%= link_to 'Logout', { :controller => 'users', :action => 'logout' } %></li>
           <% else %>
             <li><%= link_to 'Crie sua Conta!', { :controller => 'users', :action => 'register' } %></li>
@@ -32,6 +33,7 @@
           <% end %>
         </ul>
       </div>
+      <div id="creditos"></div>
       <%= yield %>
     </div>
   </body>
